@@ -1,38 +1,155 @@
-.App {
+/* Global reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HomePage */
+.homepage-wrapper {
+  min-height: 100vh;
+  background-color: #cfcdcdff; /* ljusgrå bakgrund */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cities-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* CityForm */
+.city-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.city-form select,
+.city-form input,
+.city-form button {
+  font-size: 1.3rem;
+  padding: 8px;
+}
+
+/* Clock */
+.clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.clock-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.digital-clock {
+  margin-top: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.6);
+  color: #cfd1cfff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-width: 80px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* CityPage */
+.city-page-wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #f0f0f0;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media Queries för skalbarhet */
+@media (max-width: 1400px) {
+  .homepage-title {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .city-form select,
+  .city-form input,
+  .city-form button {
+    font-size: 1.1rem;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .homepage-title {
+    font-size: 2.2rem;
+  }
+  .city-form select,
+  .city-form input,
+  .city-form button {
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .homepage-title {
+    font-size: 2rem;
+  }
+  .city-form select,
+  .city-form input,
+  .city-form button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-title {
+    font-size: 1.8rem;
+  }
+  .city-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .city-form select,
+  .city-form input,
+  .city-form button {
+    width: 90%;
+    font-size: 1.05rem;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage-title {
+    font-size: 1.5rem;
+  }
+  .clock-title {
+    font-size: 1rem;
+  }
+  .digital-clock {
+    font-size: 0.9rem;
   }
 }
